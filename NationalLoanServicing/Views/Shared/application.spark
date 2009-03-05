@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	    <title>National Loan Servicing</title>
+	    <link rel="Stylesheet" type="text/css" href="../Content/Site.css" />
+	</head>
+    <body>
+		<div id="header">
+		    <h1>title</h1>
+		</div>
+		<div id="sidebar">
+		    sidebar stuff
+		</div>
+		<div id="main">
+		    <use content="view" />
+		</div>
+		<div id="footer">
+		    footer
+		</div>
+    </body>
+</html>

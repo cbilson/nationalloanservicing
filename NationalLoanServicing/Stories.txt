@@ -1,0 +1,44 @@
+﻿#1 
+As a servicing agent,
+I need to be able to identify loans that aren't performing,
+so I can assign them to get worked on by the contact people
+
+	+ See all loans not already being worked on
+		- Loan #
+		- Obligor name
+		- Address, City State
+		- Terms
+		- Delinquency status
+
+#1.1
+As a servicing agent,
+I need to be able to assign loans, to the contact people or BPO,
+so they can follow up with people and find out how we can get them performing.
+	+ Can select multiple loans
+	+ Can assign selected loans to be handled by contact people
+	+ Can assign selected loans to get the property appraised
+
+#2
+As contact person,
+I need to be able to see all the obligors I need to contact,
+so I can find out why they aren't performing.
+
+#3
+As a contact person,
+I need to able to enter information about contacts I made with obligors,
+so we can figure out how to make them start performing again.
+
+#4
+As a servicing agent,
+I need to be able to see the results of contacts we have made with obligors,
+so I can make a decision about how to make them start performing again.
+
+#5
+As a servicing agent,
+I need to be able to indicate how we are handling each case,
+so we know what we are doing when an event happens.
+
+#6
+As a servicing agent,
+I need to be able to indicate that a loan is performing again,
+so we can package it up with performant loans and sell them.

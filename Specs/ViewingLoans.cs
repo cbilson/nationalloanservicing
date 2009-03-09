@@ -20,7 +20,10 @@ namespace Specs.ViewingLoans
             view_model.Loans.Count.ShouldEqual(loans.Count);
 
         It shows_the_obligee_of_each_loan = () =>
-            view_model.Loans[0].ObligeeName.ShouldEqual(loans[0].Obligee.FullName);
+            view_model.Loans.Each((x, i) => x.ObligeeName.ShouldEqual(loans[i].Obligee.FullName));
+
+        It shows_the_loan_number_of_each_loan = () =>
+            view_model.Loans.Each((x, i) => x.LoanNumber.ShouldEqual(loans[i].LoanNumber));
 
         private static LoansListViewModel view_model;
     }

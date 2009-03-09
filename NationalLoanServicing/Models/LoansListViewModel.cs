@@ -9,5 +9,6 @@ namespace NationalLoanServicing.Models {
     }
     public class LoanInfo {
         public virtual string ObligeeName { get; set; }
+        public string LoanNumber { get; private set; }
     }
 }

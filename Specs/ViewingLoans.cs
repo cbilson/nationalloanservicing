@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Machine.Specifications;
+using NationalLoanServicing.Controllers;
+using NationalLoanServicing.Domain.Model;
+using NationalLoanServicing.Domain.Services;
+using NationalLoanServicing.Models;
 using Rhino.Mocks;
 
 namespace Specs.ViewingLoans
@@ -21,40 +25,7 @@ namespace Specs.ViewingLoans
         private static LoansListViewModel view_model;
     }
 
-    public class LoansListViewModel
-    {
-        public virtual IList<LoanInfo> Loans { get; set; }
-    }
-
-    public class LoanInfo
-    {
-        public virtual string ObligeeName { get; set; }
-    }
-
-    public class LoansController
-    {
-        private readonly ILoanService loanService;
-
-        public LoansController(ILoanService loanService) {
-            this.loanService = loanService;
-        }
-
-        public LoansListViewModel List()
-        {
-            var loans = loanService.GetLoans();
-
-            return new LoansListViewModel {
-                Loans = loans.Select(x => new LoanInfo {
-                    ObligeeName = x.Obligee.FullName
-                }).ToList()
-            };
-        }
-    }
-
-    public interface ILoanService
-    {
-        IList<Loan> GetLoans();
-    }
+    
 
     public abstract class with_a_set_of_loans_and_a_servicing_agent
     {
@@ -78,44 +49,5 @@ namespace Specs.ViewingLoans
         };
 
         protected static LoansController controller;
-    }
-
-    public class Loan
-    {
-        public Person Obligee;
-    }
-
-    public class Person
-    {
-        public virtual string GivenName { get; set; }
-        public virtual string MiddleName { get; set; }
-        public virtual string Surname { get; set; }
-
-        public Person() {
-            GivenName = string.Empty;
-            MiddleName = string.Empty;
-            Surname = string.Empty;
-        }
-
-        public string FullName {
-            get {
-                var nameParts = new List<String>();
-
-                if (!string.IsNullOrEmpty(GivenName))
-                    nameParts.Add(GivenName);
-
-                if (!string.IsNullOrEmpty(MiddleName))
-                    nameParts.Add(MiddleName);
-
-                if (!string.IsNullOrEmpty(Surname))
-                    nameParts.Add(Surname);
-
-                return string.Join(" ", nameParts.ToArray());
-            }
-        }
-    }
-
-    public class ServicingAgent
-    {
     }
 }

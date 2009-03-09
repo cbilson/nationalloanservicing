@@ -61,8 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewingLoans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewingLoans.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NationalLoanServicing\NationalLoanServicing.csproj">

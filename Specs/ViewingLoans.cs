@@ -38,9 +38,9 @@ namespace Specs.ViewingLoans
 
         Establish context = () => {
             loans = new List<Loan> { 
-                new Loan { Obligee = new Person() },
-                new Loan { Obligee = new Person() },
-                new Loan { Obligee = new Person() }
+                new Loan { Obligee = new Person { GivenName = "Joe", Surname = "King" } },
+                new Loan { Obligee = new Person { GivenName = "George", Surname = "Washington" } },
+                new Loan { Obligee = new Person { GivenName = "Tom", Surname = "Payne" } }
             };
             agent = new ServicingAgent();
 

@@ -17,11 +17,7 @@ namespace NationalLoanServicing.Controllers {
         public LoansListViewModel List() {
             var loans = loanService.GetLoans();
 
-            return new LoansListViewModel {
-                Loans = loans.Select(x => new LoanInfo {
-                    ObligeeName = x.Obligee.FullName
-                }).ToList()
-            };
+            return loans.ToLoansListViewModel();
         }
     }
 }

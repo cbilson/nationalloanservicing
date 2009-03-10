@@ -1,0 +1,13 @@
+<div>
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <for each="var loan in view_model.loans">
+                <tr>
+                    <td>${loan.loanNumber}</td>
+                </tr>
+            </for>
+        </tbody>
+    </table>
+</div>

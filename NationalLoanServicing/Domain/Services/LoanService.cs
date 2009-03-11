@@ -7,14 +7,14 @@ namespace NationalLoanServicing.Domain.Services
     {
         public IList<Loan> GetLoans() {
             return new List<Loan> { 
-		                new Loan { 
-		                    LoanNumber = "A-123456789", 
-		                    Obligee = new Person { 
-		                        GivenName = "Joe",
-		                        MiddleName = "F.",
-		                    } 
-		                }
-		            };
+                new Loan { 
+                    LoanNumber = "A-123456789", 
+                    Obligee = new Person { 
+                        GivenName = "Joe",
+                        MiddleName = "F.",
+                    } 
+                }
+            };
         }
     }
 }

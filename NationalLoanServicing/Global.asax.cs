@@ -10,19 +10,20 @@ using Ninject.Core;
 using Ninject.Framework.Mvc;
 using Spark;
 using NinjectHttpApplication=Ninject.Framework.Web.NinjectHttpApplication;
+using Ninject.Core.Binding;
+using NationalLoanServicing.Domain.Services;
 
 namespace NationalLoanServicing {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
 
     public class Global : NinjectHttpApplication {
+
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
                 "Default",                                              // Route name
-                "{controller}/{action}/{id}",                           // URL with parameters
-                new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
+                "{controller}/{action}",
+                new { controller = "Loans", action = "List" } 
             );
         }
 
@@ -33,8 +34,7 @@ namespace NationalLoanServicing {
             ConfigureSpark();
         }
 
-        private void ConfigureSpark()
-        {
+        private void ConfigureSpark() {
             var settings = new SparkSettings()
                 .SetDebug(true)
                 .AddAssembly(Assembly.GetExecutingAssembly())
@@ -46,10 +46,10 @@ namespace NationalLoanServicing {
             ViewEngines.Engines.Add(new SparkViewFactory());
         }
 
-        protected override IKernel CreateKernel()
-        {
+        protected override IKernel CreateKernel() {
             return new StandardKernel(new IModule[] {
-                new AutoControllerModule(Assembly.GetExecutingAssembly())
+                new AutoControllerModule(Assembly.GetExecutingAssembly()),
+                new ServiceModule()
             });
         }
     }

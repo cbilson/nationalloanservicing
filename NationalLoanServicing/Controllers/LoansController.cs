@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using NationalLoanServicing.Domain.Services;
 using NationalLoanServicing.Models;
+using Ninject.Core;
 
 namespace NationalLoanServicing.Controllers {
     public class LoansController : Controller {

@@ -31,6 +31,8 @@ namespace NationalLoanServicing {
 
             RegisterRoutes(RouteTable.Routes);
 
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+
             ConfigureSpark();
         }
 

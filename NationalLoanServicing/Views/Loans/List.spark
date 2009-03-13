@@ -1,12 +1,18 @@
 <viewdata view_model="NationalLoanServicing.Models.LoansListViewModel" />
 <div>
+  <h1>Incoming Loans Queue</h1>
     <table>
         <thead>
+          <tr>
+            <td>Number</td>
+            <td>Obligee</td>
+          </tr>
         </thead>
         <tbody>
             <for each="var loan in view_model.Loans">
                 <tr>
                     <td>${loan.LoanNumber}</td>
+                    <td>${loan.ObligeeName}</td>
                 </tr>
             </for>
         </tbody>

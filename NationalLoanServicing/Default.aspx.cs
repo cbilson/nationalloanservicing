@@ -10,8 +10,6 @@ namespace NationalLoanServicing {
             HttpContext.Current.RewritePath(Request.ApplicationPath, false);
             IHttpHandler httpHandler = new MvcHttpHandler();
 
-            Debug.Assert(ControllerBuilder.Current is NinjectControllerFactory);
-
             httpHandler.ProcessRequest(HttpContext.Current);
         }
     }

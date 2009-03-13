@@ -1,11 +1,12 @@
+<viewdata view_model="NationalLoanServicing.Models.LoansListViewModel" />
 <div>
     <table>
         <thead>
         </thead>
         <tbody>
-            <for each="var loan in view_model.loans">
+            <for each="var loan in view_model.Loans">
                 <tr>
-                    <td>${loan.loanNumber}</td>
+                    <td>${loan.LoanNumber}</td>
                 </tr>
             </for>
         </tbody>

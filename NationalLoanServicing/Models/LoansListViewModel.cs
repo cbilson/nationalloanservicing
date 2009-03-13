@@ -14,6 +14,7 @@ namespace NationalLoanServicing.Models {
         public static LoansListViewModel ToLoansListViewModel(this IEnumerable<Loan> loans) {
             return new LoansListViewModel {
                 Loans = loans.Select(x => new LoanInfo {
+                    LoanNumber = x.LoanNumber,
                     ObligeeName = x.Obligee.FullName
                 }).ToList()
             };
@@ -22,6 +23,6 @@ namespace NationalLoanServicing.Models {
 
     public class LoanInfo {
         public virtual string ObligeeName { get; set; }
-        public string LoanNumber { get; private set; }
+        public string LoanNumber { get; set; }
     }
 }

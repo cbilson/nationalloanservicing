@@ -8,17 +8,22 @@ using NationalLoanServicing.Models;
 using Ninject.Core;
 
 namespace NationalLoanServicing.Controllers {
+
     public class LoansController : Controller {
+
         private readonly ILoanService loanService;
 
         public LoansController(ILoanService loanService) {
             this.loanService = loanService;
         }
 
-        public LoansListViewModel List() {
+        public ActionResult List() {
+
             var loans = loanService.GetLoans();
 
-            return loans.ToLoansListViewModel();
+            ViewData.Add("view_model", loans.ToLoansListViewModel());
+
+            return View();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using NationalLoanServicing.Domain.Services;
 using NationalLoanServicing.Models;
 using Ninject.Core;
+using Spark.Web.Mvc;
 
 namespace NationalLoanServicing.Controllers {
 
@@ -23,7 +24,7 @@ namespace NationalLoanServicing.Controllers {
 
             ViewData.Add("view_model", loans.ToLoansListViewModel());
 
-            return View();
+            return new JavascriptViewResult { };
         }
     }
 }

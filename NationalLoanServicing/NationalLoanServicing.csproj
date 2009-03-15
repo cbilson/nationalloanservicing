@@ -92,6 +92,10 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoansController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Domain\Model\Loan.cs" />
     <Compile Include="Domain\Model\Person.cs" />
     <Compile Include="Domain\Model\ServicingAgent.cs" />
@@ -130,6 +134,7 @@
     <Content Include="Content\ui.slider.css" />
     <Content Include="Content\ui.tabs.css" />
     <Content Include="Content\ui.theme.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
     <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />

@@ -6,19 +6,25 @@ using System.Web.Mvc;
 using NationalLoanServicing.Domain.Services;
 using NationalLoanServicing.Models;
 using Ninject.Core;
+using Spark.Web.Mvc;
 
 namespace NationalLoanServicing.Controllers {
+
     public class LoansController : Controller {
+
         private readonly ILoanService loanService;
 
         public LoansController(ILoanService loanService) {
             this.loanService = loanService;
         }
 
-        public LoansListViewModel List() {
+        public ActionResult List() {
+
             var loans = loanService.GetLoans();
 
-            return loans.ToLoansListViewModel();
+            ViewData.Add("view_model", loans.ToLoansListViewModel());
+
+            return new JavascriptViewResult { };
         }
     }
 }

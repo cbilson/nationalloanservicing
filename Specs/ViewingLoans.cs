@@ -13,8 +13,7 @@ namespace Specs.ViewingLoans
 {
     public class when_a_servicing_agent_is_viewing_loans : with_a_set_of_loans_and_a_servicing_agent
     {
-        Because of = () => 
-            view_model = controller.List();
+        Because of = () => controller.List();
 
         It shows_all_the_loans = () =>
             view_model.Loans.Count.ShouldEqual(loans.Count);
@@ -24,11 +23,7 @@ namespace Specs.ViewingLoans
 
         It shows_the_loan_number_of_each_loan = () =>
             view_model.Loans.Each((x, i) => x.LoanNumber.ShouldEqual(loans[i].LoanNumber));
-
-        private static LoansListViewModel view_model;
     }
-
-    
 
     public abstract class with_a_set_of_loans_and_a_servicing_agent
     {
@@ -52,5 +47,12 @@ namespace Specs.ViewingLoans
         };
 
         protected static LoansController controller;
+        protected static LoansListViewModel view_model
+        {
+            get
+            {
+                return controller.ViewData["view_model"] as LoansListViewModel;
+            }
+        }
     }
 }

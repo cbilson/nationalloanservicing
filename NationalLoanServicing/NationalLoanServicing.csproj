@@ -106,7 +106,9 @@
     <Compile Include="Domain\Model\Person.cs" />
     <Compile Include="Domain\Model\ServicingAgent.cs" />
     <Compile Include="Domain\Services\ILoanService.cs" />
-    <Compile Include="Domain\Services\LoanService.cs" />
+    <Compile Include="Domain\Services\IPeopleService.cs" />
+    <Compile Include="Domain\Services\Impl\LoanService.cs" />
+    <Compile Include="Domain\Services\Impl\PeopleService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

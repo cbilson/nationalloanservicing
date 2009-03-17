@@ -5,9 +5,9 @@
     <table id="peopleTable">
         <thead>
             <tr>
-                <td>
+                <td style="width: 20em;">
                 First Name</td>
-                <td>
+                <td style="width: 20em;">
                 LastName</td>
             </tr>
         </thead>

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using NationalLoanServicing.Domain.Model;
 
-namespace NationalLoanServicing.Domain.Services
+namespace NationalLoanServicing.Domain.Services.Impl
 {
     public class DummyLoanService : ILoanService
     {

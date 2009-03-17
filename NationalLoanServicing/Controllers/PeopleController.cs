@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 using NationalLoanServicing.Domain.Model;
+using NationalLoanServicing.Domain.Services;
 
 namespace NationalLoanServicing.Controllers
 {
@@ -15,9 +16,9 @@ namespace NationalLoanServicing.Controllers
         /// <summary>
         /// Initializes a new instance of the PeopleController class.
         /// </summary>
-        public PeopleController()
+        public PeopleController(IPeopleService peopleService)
         {
-            peopleService = new PeopleService();
+            this.peopleService = peopleService;
         }
 
         public ActionResult Index()
@@ -36,37 +37,6 @@ namespace NationalLoanServicing.Controllers
                 people = peopleService.GetAllPeople() });
         }
 
-    }
-
-    public interface IPeopleService
-    {
-        IList<Person> GetAllPeople();
-        void Save(Person person);
-    }
-
-    public class PeopleService : IPeopleService
-    {
-        private List<Person> people;
-
-        /// <summary>
-        /// Initializes a new instance of the PeopleService class.
-        /// </summary>
-        public PeopleService()
-        {
-            people = new List<Person> { 
-                new Person { GivenName = "Joe", Surname = "King" }
-            };
-        }
-
-        public IList<Person> GetAllPeople()
-        {
-            return people;
-        }
-
-        public void Save(Person person)
-        {
-            people.Add(person);
-        }
     }
 
     public class PeopleListModel

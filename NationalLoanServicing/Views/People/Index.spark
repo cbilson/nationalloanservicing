@@ -1,0 +1,43 @@
+﻿<use namespace="NationalLoanServicing" />
+<viewdata model="NationalLoanServicing.Controllers.PeopleListModel" />
+
+<div>
+    <table id="peopleTable">
+        <thead>
+            <tr>
+                <td>
+                First Name</td>
+                <td>
+                LastName</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr each="var person in ViewData.Model.people">
+                <td>${person.GivenName}</td>
+                <td>
+                ${person.Surname}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="padding-top: 20px;">
+        <form action="New">
+            Add a person:
+            <input type="text" id="givenNameTextBox" name="givenName" class="watermark" />
+            <input type="text" id="surnameTextBox" name="surname" class="watermark" />
+            <input type="submit" value="Save" />
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function() {
+        $("#givenNameTextBox").data("watermarkText", "Given Name");
+        $("#surnameTextBox").data("watermarkText", "Surname");
+    });
+    
+</script>
+
+
+
+
